@@ -1,11 +1,24 @@
 import React from "react";
-
-function App() {
-  return (
-    <div className="App">
-      <h1>hii</h1>
-    </div>
-  );
+import { Cards, Charts } from './components'
+import style from './App.module.css';
+import { fetchdata } from './Api';
+class App extends React.Component {
+  state = {
+    data: {},
+  }
+  async componentDidMount() {
+    const fetchData = await fetchdata();
+    this.setState({ data: fetchData })
+  }
+  render() {
+    const { data } = this.state;
+    return (
+      <div className={style.container} >
+        <Cards data={data} />
+        <Charts />
+      </div>
+    );
+  }
 }
 
 export default App;
