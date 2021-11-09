@@ -1,0 +1,11 @@
+.conatiner{
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    flex-direction: column;
+}
+h1{
+    color: blanchedalmond;
+    text-align: center;
+    margin: 2rem 0;
+}
